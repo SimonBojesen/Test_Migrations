@@ -51,7 +51,6 @@ class CreateCustomerTest {
             CustomerCreation c = new CustomerCreation(faker.name().firstName(), faker.name().lastName(), Integer.parseInt(faker.number().digits(8)));
             customerStorage.createCustomer(c);
         }
-
     }
 
     @Test
