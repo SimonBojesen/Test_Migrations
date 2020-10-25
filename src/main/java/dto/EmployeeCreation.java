@@ -2,21 +2,15 @@ package dto;
 
 import java.util.Date;
 
-public class Employee {
-    private final int id;
+public class EmployeeCreation {
     private final String firstname;
     private final String lastname;
     private final Date birthdate;
 
-    public Employee(int id, String firstname, String lastname, Date birthdate) {
-        this.id = id;
+    public EmployeeCreation(String firstname, String lastname, Date birthdate) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.birthdate = birthdate;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getFirstname() {
@@ -30,4 +24,5 @@ public class Employee {
     public Date getBirthdate() {
         return birthdate;
     }
+
 }

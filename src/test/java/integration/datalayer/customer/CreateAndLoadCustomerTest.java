@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Tag("integration")
-class CreateCustomerTest {
+class CreateAndLoadCustomerTest {
     private CustomerStorage customerStorage;
 
     @BeforeAll
@@ -31,7 +31,7 @@ class CreateCustomerTest {
                 .defaultSchema(db)
                 .createSchemas(true)
                 .schemas(db)
-                .target("2")
+                .target("4")
                 .dataSource(url, "root", "testuser123"));
 
         flyway.migrate();

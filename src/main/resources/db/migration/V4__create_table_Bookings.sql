@@ -3,8 +3,8 @@ create table Bookings (
 	customerId int not null,	
 	employeeId int not null,	
 	date Date not null,		
-	start Time not null,		
-	end Time not null,		
+	start nvarchar(255) not null,
+	end nvarchar(255) not null,
 	primary key (ID),		
 	foreign key (customerId)	
 		references Customers(ID)

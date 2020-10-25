@@ -17,7 +17,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public int createCustomer(String firstName, String lastName, Date birthdate, int phonenumber) throws CustomerServiceException {
+    public int createCustomer(String firstName, String lastName, int phonenumber) throws CustomerServiceException {
         try {
             return customerStorage.createCustomer(new CustomerCreation(firstName, lastName, phonenumber));
         } catch (SQLException throwables) {
@@ -26,12 +26,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer getCustomerById(int id) {
-        return null;
+    public Customer getCustomerById(int id) throws CustomerServiceException {
+        try {
+            return customerStorage.getCustomerWithId(id);
+        } catch (SQLException throwables) {
+            throw new CustomerServiceException(throwables.getMessage());
+        }
     }
 
-    @Override
-    public Collection<Customer> getCustomersByFirstName(String firstName) {
-        return null;
-    }
 }
