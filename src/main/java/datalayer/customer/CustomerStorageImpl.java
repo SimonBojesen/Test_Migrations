@@ -1,5 +1,6 @@
 package datalayer.customer;
 
+import datalayer.ConnectionString;
 import dto.Customer;
 import dto.CustomerCreation;
 
@@ -8,17 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerStorageImpl implements CustomerStorage {
-    private String connectionString;
-    private String username, password;
+    ConnectionString connection;
 
-    public CustomerStorageImpl(String conStr, String user, String pass){
-        connectionString = conStr;
-        username = user;
-        password = pass;
+    public CustomerStorageImpl(ConnectionString connection){
+       this.connection = connection;
     }
 
     private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(connectionString, username, password);
+        return DriverManager.getConnection(connection.getConnectionString(), connection.getUsername(), connection.getPassword());
     }
 
     @Override

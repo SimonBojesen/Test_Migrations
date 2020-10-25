@@ -1,5 +1,6 @@
 package main;
 
+import datalayer.ConnectionString;
 import dto.Customer;
 import datalayer.customer.CustomerStorageImpl;
 
@@ -7,12 +8,12 @@ import java.sql.SQLException;
 
 public class Main {
 
-    private static final String conStr = "jdbc:mysql://localhost:3306/DemoApplicationTest";
+    private static final String conStr = "jdbc:mysql://localhost:3307/DemoApplicationTest";
     private static final String user = "root";
     private static final String pass = "testuser123";
 
     public static void main(String[] args) throws SQLException {
-        CustomerStorageImpl storage = new CustomerStorageImpl(conStr, user, pass);
+        CustomerStorageImpl storage = new CustomerStorageImpl(new ConnectionString(conStr, user, pass));
 
         System.out.println("Got customers: ");
         for(Customer c : storage.getCustomers()) {

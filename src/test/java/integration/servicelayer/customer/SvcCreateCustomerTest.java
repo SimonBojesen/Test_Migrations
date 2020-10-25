@@ -1,5 +1,6 @@
 package integration.servicelayer.customer;
 
+import datalayer.ConnectionString;
 import datalayer.customer.CustomerStorage;
 import datalayer.customer.CustomerStorageImpl;
 import org.flywaydb.core.Flyway;
@@ -57,7 +58,7 @@ class SvcCreateCustomerTest {
         );
         flyway.migrate();
 
-        storage = new CustomerStorageImpl(url + db,"root", PASSWORD);
+        storage = new CustomerStorageImpl(new ConnectionString(url + db,"root", PASSWORD));
         svc = new CustomerServiceImpl(storage);
     }
 

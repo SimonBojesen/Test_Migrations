@@ -2,6 +2,7 @@ package integration.datalayer.customer;
 
 import com.github.javafaker.Faker;
 import com.sun.jna.IntegerType;
+import datalayer.ConnectionString;
 import datalayer.customer.CustomerStorage;
 import datalayer.customer.CustomerStorageImpl;
 import dto.CustomerCreation;
@@ -30,12 +31,13 @@ class CreateCustomerTest {
                 .defaultSchema(db)
                 .createSchemas(true)
                 .schemas(db)
-                .target("4")
+                .target("2")
                 .dataSource(url, "root", "testuser123"));
 
         flyway.migrate();
 
-        customerStorage = new CustomerStorageImpl(url+db, "root", "testuser123");
+
+        customerStorage = new CustomerStorageImpl(new ConnectionString(url+db, "root", "testuser123"));
 
         var numCustomers = customerStorage.getCustomers().size();
         if (numCustomers < 100) {
