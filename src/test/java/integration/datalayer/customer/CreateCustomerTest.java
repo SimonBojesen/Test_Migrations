@@ -1,6 +1,7 @@
 package integration.datalayer.customer;
 
 import com.github.javafaker.Faker;
+import com.sun.jna.IntegerType;
 import datalayer.customer.CustomerStorage;
 import datalayer.customer.CustomerStorageImpl;
 import dto.CustomerCreation;
@@ -45,7 +46,7 @@ class CreateCustomerTest {
     private void addFakeCustomers(int numCustomers) throws SQLException {
         Faker faker = new Faker();
         for (int i = 0; i < numCustomers; i++) {
-            CustomerCreation c = new CustomerCreation(faker.name().firstName(), faker.name().lastName(), Integer.parseInt(faker.phoneNumber().phoneNumber()));
+            CustomerCreation c = new CustomerCreation(faker.name().firstName(), faker.name().lastName(), Integer.parseInt(faker.number().digits(8)));
             customerStorage.createCustomer(c);
         }
 
