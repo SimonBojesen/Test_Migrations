@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerStorageImpl implements CustomerStorage {
-    ConnectionString connection;
+    private ConnectionString connection;
 
     public CustomerStorageImpl(ConnectionString connection){
        this.connection = connection;
     }
 
     private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(connection.getConnectionString(), connection.getUsername(), connection.getPassword());
+        return DriverManager.getConnection(connection.getConnectionUrl(), connection.getUsername(), connection.getPassword());
     }
 
     @Override
@@ -72,8 +72,7 @@ public class CustomerStorageImpl implements CustomerStorage {
             // get the newly created id
             try (var resultSet = stmt.getGeneratedKeys()) {
                 resultSet.next();
-                int newId = resultSet.getInt(1);
-                return newId;
+                return resultSet.getInt(1);
             }
         }
     }

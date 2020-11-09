@@ -1,24 +1,22 @@
 package datalayer.employee;
 
 import datalayer.ConnectionString;
-import dto.Customer;
 import dto.Employee;
 import dto.EmployeeCreation;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class EmployeeStorageImpl implements EmployeeStorage{
-    ConnectionString connection;
+    private ConnectionString connection;
 
     public EmployeeStorageImpl(ConnectionString connection){
         this.connection = connection;
     }
 
     private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(connection.getConnectionString(), connection.getUsername(), connection.getPassword());
+        return DriverManager.getConnection(connection.getConnectionUrl(), connection.getUsername(), connection.getPassword());
     }
 
     @Override
@@ -35,8 +33,7 @@ public class EmployeeStorageImpl implements EmployeeStorage{
             // get the newly created id
             try (var resultSet = stmt.getGeneratedKeys()) {
                 resultSet.next();
-                int newId = resultSet.getInt(1);
-                return newId;
+                return resultSet.getInt(1);
             }
         }
     }

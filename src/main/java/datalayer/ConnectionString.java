@@ -2,24 +2,24 @@ package datalayer;
 
 public class ConnectionString {
 
-    private String connectionString;
+    private String connectionUrl;
     private String username;
     private String password;
 
     public ConnectionString() {
-        this.connectionString = "jdbc:mysql://localhost:3307/DemoApplicationTest";
+        this.connectionUrl = "jdbc:mysql://localhost:3307/DemoApplicationTest";
         this.username = "root";
         this.password = "testuser123";
     }
 
-    public ConnectionString(String connectionString, String username, String password) {
-        this.connectionString = connectionString;
+    public ConnectionString(String connectionUrl, String username, String password) {
+        this.connectionUrl = connectionUrl;
         this.username = username;
         this.password = password;
     }
 
-    public String getConnectionString() {
-        return connectionString;
+    public String getConnectionUrl() {
+        return connectionUrl;
     }
 
     public String getUsername() {

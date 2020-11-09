@@ -2,10 +2,7 @@ package unit.servicelayer.customer;
 
 import datalayer.customer.CustomerStorage;
 import dto.Employee;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 import servicelayer.customer.CustomerService;
 import servicelayer.customer.CustomerServiceException;
 import servicelayer.customer.CustomerServiceImpl;
@@ -34,12 +31,12 @@ public class CreateCustomerTest {
     }
 
     @Test
-    public void mustCallStorageWhenCreatingCustomer() throws CustomerServiceException, SQLException {
+    private void mustCallStorageWhenCreatingCustomer() throws CustomerServiceException, SQLException {
         // Arrange
         // Act
         var firstName = "a";
         var lastName = "b";
-        var phonenumber = 12345678;
+        int phonenumber = 12345678;
         customerService.createCustomer(firstName, lastName, phonenumber);
 
         // Assert
@@ -50,12 +47,12 @@ public class CreateCustomerTest {
                 .createCustomer(
                         argThat(x -> x.getFirstname().equals(firstName) &&
                                 x.getLastname().equals(lastName) &&
-                                x.getPhonenumber() == phonenumber
-                        ));
+                                x.getPhonenumber() == phonenumber)
+                        );
     }
 
     @Test
-    public void mustCallStorageWhenGettingCustomer() throws CustomerServiceException, SQLException {
+    private void mustCallStorageWhenGettingCustomer() throws CustomerServiceException, SQLException {
         // Arrange
         var id = 1;
         // Act

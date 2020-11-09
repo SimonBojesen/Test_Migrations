@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 
 public interface BookingStorage {
-    public int createBooking(BookingCreation booking) throws SQLException;
-    public Collection<Booking> getBookings() throws SQLException;
-    public Collection<Booking> getBookingsForCustomer(int customerId) throws SQLException;
+    int createBooking(BookingCreation booking) throws SQLException;
+    Collection<Booking> getBookings() throws SQLException;
+    Collection<Booking> getBookingsForCustomer(int customerId) throws SQLException;
 }

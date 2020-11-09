@@ -1,12 +1,8 @@
 package servicelayer.booking;
 
 import datalayer.booking.BookingStorage;
-import datalayer.customer.CustomerStorage;
 import dto.Booking;
 import dto.BookingCreation;
-import dto.Customer;
-import dto.CustomerCreation;
-import servicelayer.customer.CustomerServiceException;
 
 import java.sql.SQLException;
 import java.util.Collection;

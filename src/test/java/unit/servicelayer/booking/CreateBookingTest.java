@@ -38,7 +38,7 @@ public class CreateBookingTest {
     }
 
     @Test
-    public void mustCallStorageWhenCreatingBooking() throws BookingServiceException, SQLException {
+    private void mustCallStorageWhenCreatingBooking() throws BookingServiceException, SQLException {
         // Arrange
         var customerId = 1;
         var employeeId = 1;
@@ -53,7 +53,7 @@ public class CreateBookingTest {
         // Can be read like: verify that storageMock was called 1 time on the method
         //   'createCustomer' with an argument whose 'firstname' == firstName and
         //   whose 'lastname' == lastName
-        verify(storageMock, times(1))
+        verify(storageMock)
                 .createBooking(
                         argThat(x -> x.getCustomerId() == customerId &&
                                 x.getEmployeeId() == employeeId &&
@@ -64,7 +64,7 @@ public class CreateBookingTest {
     }
 
     @Test
-    public void mustCallStorageWhenGettingCustomerBookings() throws BookingServiceException, SQLException {
+    private void mustCallStorageWhenGettingCustomerBookings() throws BookingServiceException, SQLException {
         // Arrange
         var customerId = 1;
         // Act
@@ -81,7 +81,7 @@ public class CreateBookingTest {
     }
 
     @Test
-    public void mustCallStorageWhenGettingBookings() throws BookingServiceException, SQLException {
+    private void mustCallStorageWhenGettingBookings() throws BookingServiceException, SQLException {
         // Arrange
         // Act
 

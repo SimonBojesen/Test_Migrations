@@ -54,7 +54,7 @@ class CreateAndLoadCustomerTest {
     }
 
     @Test
-    public void mustSaveCustomerInDatabaseWhenCallingCreateCustomer() throws SQLException {
+    private void mustSaveCustomerInDatabaseWhenCallingCreateCustomer() throws SQLException {
         // Arrange
         // Act
         customerStorage.createCustomer(new CustomerCreation("John","Carlssonn", 12345678));
@@ -69,7 +69,7 @@ class CreateAndLoadCustomerTest {
     }
 
     @Test
-    public void mustReturnLatestId() throws SQLException {
+    private void mustReturnLatestId() throws SQLException {
         // Arrange
         // Act
         var id1 = customerStorage.createCustomer(new CustomerCreation("a", "b", 12345678));

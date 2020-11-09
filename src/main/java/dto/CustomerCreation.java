@@ -11,8 +11,9 @@ public class CustomerCreation {
 
     public int getPhonenumber() { return phonenumber; }
 
-    public final String firstname, lastname;
-    public final int phonenumber;
+    private final String firstname, lastname;
+    private final int phonenumber;
+
     public CustomerCreation(String firstname, String lastname, int phonenumber) {
         this.firstname = firstname;
         this.lastname = lastname;

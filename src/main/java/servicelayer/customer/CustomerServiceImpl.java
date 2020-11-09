@@ -5,8 +5,6 @@ import dto.Customer;
 import dto.CustomerCreation;
 
 import java.sql.SQLException;
-import java.util.Collection;
-import java.util.Date;
 
 public class CustomerServiceImpl implements CustomerService {
 

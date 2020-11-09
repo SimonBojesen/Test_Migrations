@@ -60,7 +60,7 @@ public class CreateAndLoadEmployeeTest {
     }
 
     @Test
-    public void mustSaveCustomerInDatabaseWhenCallingCreateCustomer() throws SQLException, ParseException {
+    private void mustSaveCustomerInDatabaseWhenCallingCreateCustomer() throws SQLException, ParseException {
         // Arrange
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date now = sdf.parse("2020-05-05");
@@ -77,7 +77,7 @@ public class CreateAndLoadEmployeeTest {
     }
 
     @Test
-    public void mustReturnLatestId() throws SQLException {
+    private void mustReturnLatestId() throws SQLException {
         // Arrange
         // Act
         var id1 = employeeStorage.createEmployee(new EmployeeCreation("a", "b", new Date()));

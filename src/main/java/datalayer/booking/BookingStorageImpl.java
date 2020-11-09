@@ -16,24 +16,16 @@ import java.util.Collection;
 import java.util.List;
 
 public class BookingStorageImpl implements BookingStorage{
-    ConnectionString connection;
+    private ConnectionString connection;
 
     public BookingStorageImpl(ConnectionString connection){
         this.connection = connection;
     }
 
     private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(connection.getConnectionString(), connection.getUsername(), connection.getPassword());
+        return DriverManager.getConnection(connection.getConnectionUrl(), connection.getUsername(), connection.getPassword());
     }
 
-    /*this.id = id;
-        this.customer = customer;
-        this.employee = employee;
-        this.date = date;
-        this.start = start;
-        this.end = end;
-
-     */
 
 
     @Override
@@ -52,8 +44,7 @@ public class BookingStorageImpl implements BookingStorage{
             // get the newly created id
             try (var resultSet = stmt.getGeneratedKeys()) {
                 resultSet.next();
-                int newId = resultSet.getInt(1);
-                return newId;
+                return resultSet.getInt(1);
             }
         }
     }
@@ -62,20 +53,22 @@ public class BookingStorageImpl implements BookingStorage{
         try (var con = getConnection();
              var stmt = con.createStatement()) {
 
-            ResultSet resultSet = stmt.executeQuery("select ID, customerId, employeeId, date, start, end from Bookings");
+            List<Booking> list;
+            try (ResultSet resultSet = stmt.executeQuery("select ID, customerId, employeeId, date, start, end from Bookings")) {
 
-            CustomerStorage cs = new CustomerStorageImpl(connection);
-            EmployeeStorage es = new EmployeeStorageImpl(connection);
+                CustomerStorage cs = new CustomerStorageImpl(connection);
+                EmployeeStorage es = new EmployeeStorageImpl(connection);
 
-            List<Booking> list = new ArrayList<>();
-            while (resultSet.next()) {
-                int id = resultSet.getInt("ID");
-                Customer customer = cs.getCustomerWithId(resultSet.getInt("customerId"));
-                Employee employee = es.getEmployeeWithId(resultSet.getInt("employeeId"));
-                Date date = resultSet.getDate("date");
-                String start = resultSet.getString("start");
-                String end = resultSet.getString("end");
-                list.add(new Booking(id, customer, employee, date, start, end));
+                list = new ArrayList<>();
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("ID");
+                    Customer customer = cs.getCustomerWithId(resultSet.getInt("customerId"));
+                    Employee employee = es.getEmployeeWithId(resultSet.getInt("employeeId"));
+                    Date date = resultSet.getDate("date");
+                    String start = resultSet.getString("start");
+                    String end = resultSet.getString("end");
+                    list.add(new Booking(id, customer, employee, date, start, end));
+                }
             }
 
             return list;

@@ -1,14 +1,10 @@
 package servicelayer.employee;
 
-import datalayer.customer.CustomerStorage;
 import datalayer.employee.EmployeeStorage;
-import dto.CustomerCreation;
 import dto.Employee;
 import dto.EmployeeCreation;
-import servicelayer.customer.CustomerServiceException;
 
 import java.sql.SQLException;
-import java.util.Collection;
 import java.util.Date;
 
 public class EmployeeServiceImpl implements EmployeeService{
@@ -23,6 +19,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         try {
             return employeeStorage.createEmployee(new EmployeeCreation(firstName, lastName, birthdate));
         } catch (SQLException throwables) {
+            throwables.printStackTrace();
             throw new EmployeeServiceException(throwables.getMessage());
         }
     }
@@ -32,6 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         try {
             return employeeStorage.getEmployeeWithId(id);
         } catch (SQLException throwables) {
+            throwables.printStackTrace();
             throw new EmployeeServiceException(throwables.getMessage());
         }
     }

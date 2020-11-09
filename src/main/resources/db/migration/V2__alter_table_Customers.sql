@@ -1,2 +1,2 @@
 alter table Customers
-add phonenumber INT
+add phonenumber varchar(16)

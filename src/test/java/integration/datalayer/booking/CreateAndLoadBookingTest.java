@@ -78,7 +78,7 @@ public class CreateAndLoadBookingTest {
     }
 
     @Test
-    public void mustSaveBookingInDatabaseWhenCallingCreateBooking() throws SQLException, ParseException {
+    private void mustSaveBookingInDatabaseWhenCallingCreateBooking() throws SQLException, ParseException {
         // Arrange
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date now = sdf.parse("2020-05-05");
@@ -100,7 +100,7 @@ public class CreateAndLoadBookingTest {
     }
 
     @Test
-    public void mustReturnLatestId() throws SQLException, ParseException {
+    private void mustReturnLatestId() throws SQLException, ParseException {
         // Arrange
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date now = sdf.parse("2021-12-08");
