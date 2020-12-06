@@ -25,6 +25,12 @@ Then just run WebMain.java.
 A browser will open where each link will be clicked
 Check console to see the correct table values that will be printed
 
+## Cucumber 10 minute tutorial
+How to start cucumber tutorial tests
+* Open a terminal
+* Cd into cucumber\hellocucumber
+Cucumber was not extended into our program
+
 
 
 
