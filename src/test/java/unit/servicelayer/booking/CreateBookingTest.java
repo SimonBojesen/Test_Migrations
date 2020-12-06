@@ -38,7 +38,7 @@ public class CreateBookingTest {
     }
 
     @Test
-    private void mustCallStorageWhenCreatingBooking() throws BookingServiceException, SQLException {
+    public void mustCallStorageWhenCreatingBooking() throws BookingServiceException, SQLException {
         // Arrange
         var customerId = 1;
         var employeeId = 1;
@@ -64,7 +64,7 @@ public class CreateBookingTest {
     }
 
     @Test
-    private void mustCallStorageWhenGettingCustomerBookings() throws BookingServiceException, SQLException {
+    public void mustCallStorageWhenGettingCustomerBookings() throws BookingServiceException, SQLException {
         // Arrange
         var customerId = 1;
         // Act
@@ -81,7 +81,7 @@ public class CreateBookingTest {
     }
 
     @Test
-    private void mustCallStorageWhenGettingBookings() throws BookingServiceException, SQLException {
+    public void mustCallStorageWhenGettingBookings() throws BookingServiceException, SQLException {
         // Arrange
         // Act
 

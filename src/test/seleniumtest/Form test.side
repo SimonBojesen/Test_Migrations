@@ -1,0 +1,180 @@
+{
+  "id": "8db062b7-41d0-4577-9231-7ebd2f4587ad",
+  "version": "2.0",
+  "name": "Form test",
+  "url": "https://sqengineer.com",
+  "tests": [{
+    "id": "7ff3f7bf-54de-4770-8f5e-998b479a690a",
+    "name": "Test form",
+    "commands": [{
+      "id": "01c02324-3e7a-46b3-be1a-0c34f28a41ab",
+      "comment": "",
+      "command": "open",
+      "target": "/practice-sites/basic-web-elements/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "47dcff0d-0035-498c-a953-5663d00d8464",
+      "comment": "",
+      "command": "click",
+      "target": "id=content",
+      "targets": [
+        ["id=content", "id"],
+        ["css=#content", "css:finder"],
+        ["xpath=//div[@id='content']", "xpath:attributes"],
+        ["xpath=//div[@id='page']/div[3]", "xpath:idRelative"],
+        ["xpath=//div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce2ad6f9-fd88-497d-9691-1d37081b4980",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(2)",
+      "targets": [
+        ["css=form:nth-child(2)", "css:finder"],
+        ["xpath=//form[@action='https://sqengineer.com/practice-form-submission/']", "xpath:attributes"],
+        ["xpath=//article[@id='post-109']/div/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3f1a42e-7bda-452c-9a53-cb7b064585f8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.entry-content > p",
+      "targets": [
+        ["css=.entry-content > p", "css:finder"],
+        ["xpath=//article[@id='post-109']/div/p", "xpath:idRelative"],
+        ["xpath=//article/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'This is a basic selenium practice form. If you are have just started learning selenium, this page is for you. Roll up your sleeves and get ready to make your hands dirty  .')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8dc9253f-2174-4732-9ab7-cc8ba5f44594",
+      "comment": "",
+      "command": "click",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=fname", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//article[@id='post-109']/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bfe4421-a758-40cb-8d15-d1b4f4a94556",
+      "comment": "",
+      "command": "type",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=fname", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//article[@id='post-109']/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Test"
+    }, {
+      "id": "b81e2cc3-3bea-4970-a231-b1febd63bc1a",
+      "comment": "",
+      "command": "type",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["name=lname", "name"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//article[@id='post-109']/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Man"
+    }, {
+      "id": "f349d130-a107-41b9-9f82-3871bc73ec9b",
+      "comment": "",
+      "command": "click",
+      "target": "id=maleGender",
+      "targets": [
+        ["id=maleGender", "id"],
+        ["name=gender", "name"],
+        ["css=#maleGender", "css:finder"],
+        ["xpath=//input[@id='maleGender']", "xpath:attributes"],
+        ["xpath=//article[@id='post-109']/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db45ec2b-a1dc-4d7c-98dc-eed767a28a6f",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=emailID", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//article[@id='post-109']/div/form/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "test@mail.dk"
+    }, {
+      "id": "9e1d96c5-08f6-4312-a752-37fd24f3dddb",
+      "comment": "",
+      "command": "click",
+      "target": "id=selectBox",
+      "targets": [
+        ["id=selectBox", "id"],
+        ["css=#selectBox", "css:finder"],
+        ["xpath=//select[@id='selectBox']", "xpath:attributes"],
+        ["xpath=//article[@id='post-109']/div/form/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9baa4a5-b8e9-40f7-8e74-3370fe0b45f5",
+      "comment": "",
+      "command": "select",
+      "target": "id=selectBox",
+      "targets": [],
+      "value": "label=Los Angeles"
+    }, {
+      "id": "d1cca041-d703-427c-89f1-fe9859b12c6d",
+      "comment": "",
+      "command": "click",
+      "target": "css=option:nth-child(2)",
+      "targets": [
+        ["css=option:nth-child(2)", "css:finder"],
+        ["xpath=//option[@value='LA']", "xpath:attributes"],
+        ["xpath=//select[@id='selectBox']/option[2]", "xpath:idRelative"],
+        ["xpath=//option[2]", "xpath:position"],
+        ["xpath=//option[contains(.,'Los Angeles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "96ac3de7-147a-4966-9c1f-b8ac07b4190c",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(27)",
+      "targets": [
+        ["css=input:nth-child(27)", "css:finder"],
+        ["xpath=//input[@value='Submit']", "xpath:attributes"],
+        ["xpath=//article[@id='post-109']/div/form/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1a959a9f-93e6-41cc-8cae-c32d6428083c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7ff3f7bf-54de-4770-8f5e-998b479a690a"]
+  }],
+  "urls": ["https://sqengineer.com/"],
+  "plugins": []
+}

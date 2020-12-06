@@ -31,7 +31,7 @@ public class CreateCustomerTest {
     }
 
     @Test
-    private void mustCallStorageWhenCreatingCustomer() throws CustomerServiceException, SQLException {
+    public void mustCallStorageWhenCreatingCustomer() throws CustomerServiceException, SQLException {
         // Arrange
         // Act
         var firstName = "a";
@@ -52,7 +52,7 @@ public class CreateCustomerTest {
     }
 
     @Test
-    private void mustCallStorageWhenGettingCustomer() throws CustomerServiceException, SQLException {
+    public void mustCallStorageWhenGettingCustomer() throws CustomerServiceException, SQLException {
         // Arrange
         var id = 1;
         // Act

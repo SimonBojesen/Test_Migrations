@@ -66,7 +66,7 @@ public class CreateAndLoadBookingTest {
         }
     };
 
-    private void addFakeBookings(int numBookings,ConnectionString connection) throws SQLException {
+    public void addFakeBookings(int numBookings,ConnectionString connection) throws SQLException {
         Faker faker = new Faker();
 
         for (int i = 0; i < numBookings; i++) {
@@ -78,7 +78,7 @@ public class CreateAndLoadBookingTest {
     }
 
     @Test
-    private void mustSaveBookingInDatabaseWhenCallingCreateBooking() throws SQLException, ParseException {
+    public void mustSaveBookingInDatabaseWhenCallingCreateBooking() throws SQLException, ParseException {
         // Arrange
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date now = sdf.parse("2020-05-05");
@@ -100,7 +100,7 @@ public class CreateAndLoadBookingTest {
     }
 
     @Test
-    private void mustReturnLatestId() throws SQLException, ParseException {
+    public void mustReturnLatestId() throws SQLException, ParseException {
         // Arrange
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date now = sdf.parse("2021-12-08");

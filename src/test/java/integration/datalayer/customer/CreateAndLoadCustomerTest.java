@@ -45,7 +45,7 @@ class CreateAndLoadCustomerTest {
         }
     }
 
-    private void addFakeCustomers(int numCustomers) throws SQLException {
+    public void addFakeCustomers(int numCustomers) throws SQLException {
         Faker faker = new Faker();
         for (int i = 0; i < numCustomers; i++) {
             CustomerCreation c = new CustomerCreation(faker.name().firstName(), faker.name().lastName(), Integer.parseInt(faker.number().digits(8)));

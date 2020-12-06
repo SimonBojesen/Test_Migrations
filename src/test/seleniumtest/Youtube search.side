@@ -1,0 +1,134 @@
+{
+  "id": "c912c0fb-d2a0-4520-99e7-d1c40e1e6ad6",
+  "version": "2.0",
+  "name": "Test",
+  "url": "https://www.youtube.com",
+  "tests": [{
+    "id": "ed944679-53fb-473e-b18e-2f3115c4db55",
+    "name": "Untitled",
+    "commands": [{
+      "id": "0d0eabf1-71ca-4162-8d1e-84db7c2b77c2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ebbfffe2-3bd2-4a14-90de-43061a1e0039",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1874x1096",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e78e6d9-6b0b-49ce-939a-5ce1d71552e8",
+      "comment": "",
+      "command": "click",
+      "target": "name=search_query",
+      "targets": [
+        ["name=search_query", "name"],
+        ["css=#sb_ifc50 > #search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='sb_ifc50']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a2ec286-c5a9-4a27-957b-d7619ea80045",
+      "comment": "",
+      "command": "type",
+      "target": "name=search_query",
+      "targets": [
+        ["name=search_query", "name"],
+        ["css=#sb_ifc50 > #search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='sb_ifc50']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "cat video"
+    }, {
+      "id": "e8c0341e-adb2-44c8-ae4f-3f34dfc9c6b0",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=search_query",
+      "targets": [
+        ["name=search_query", "name"],
+        ["css=#sb_ifc50 > #search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='sb_ifc50']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "40647b32-54af-4dcd-9c8f-43e51cfe6914",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Baby Cats - Cute and Funny Cat Videos Compilation #34 | Aww Animals",
+      "targets": [
+        ["linkText=Baby Cats - Cute and Funny Cat Videos Compilation #34 | Aww Animals", "linkText"],
+        ["css=.style-scope:nth-child(1) > #dismissable #title-wrapper #video-title", "css:finder"],
+        ["xpath=//a[@id='video-title']", "xpath:attributes"],
+        ["xpath=//div[@id='title-wrapper']/h3/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/watch?v=ByH9LuSILxU')])[2]", "xpath:href"],
+        ["xpath=//div/div/div/div/h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Baby Cats - Cute and Funny Cat Videos Compilation #34 | Aww Animals')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3b1aebe-f6dd-4ef4-8ab1-1cb8b1ef04be",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=Baby Cats - Cute and Funny Cat Videos Compilation #34 | Aww Animals",
+      "targets": [
+        ["linkText=Baby Cats - Cute and Funny Cat Videos Compilation #34 | Aww Animals", "linkText"],
+        ["css=.style-scope:nth-child(1) > #dismissable #title-wrapper #video-title", "css:finder"],
+        ["xpath=//a[@id='video-title']", "xpath:attributes"],
+        ["xpath=//div[@id='title-wrapper']/h3/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/watch?v=ByH9LuSILxU')])[2]", "xpath:href"],
+        ["xpath=//div/div/div/div/h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Baby Cats - Cute and Funny Cat Videos Compilation #34 | Aww Animals')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1df6b1b7-f559-451e-a97c-acb7ba7f567b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.style-scope:nth-child(1) > #dismissable #video-title > .style-scope:nth-child(2)",
+      "targets": [
+        ["css=.style-scope:nth-child(1) > #dismissable #video-title > .style-scope:nth-child(2)", "css:finder"],
+        ["xpath=//a[@id='video-title']/yt-formatted-string", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/h3/a/yt-formatted-string", "xpath:position"],
+        ["xpath=//yt-formatted-string[contains(.,'Baby Cats - Cute and Funny Cat Videos Compilation #34 | Aww Animals')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "524e886b-bca5-46cf-a7e9-a4798ffce766",
+      "comment": "",
+      "command": "click",
+      "target": "css=.video-stream",
+      "targets": [
+        ["css=.video-stream", "css:finder"],
+        ["xpath=//div[@id='movie_player']/div/video", "xpath:idRelative"],
+        ["xpath=//video", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "607fc293-086f-4d8f-a687-4e7b092bf610",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b9df1b05-d27d-4ea1-8054-c9d3a022e5b7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["ed944679-53fb-473e-b18e-2f3115c4db55"]
+  }],
+  "urls": ["https://www.youtube.com/"],
+  "plugins": []
+}

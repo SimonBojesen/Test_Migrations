@@ -8,3 +8,23 @@ docker run -d --rm --name mysql-test-db -e MYSQL_ROOT_PASSWORD=testuser123 -p 33
 ## Authors
 Simon Schønberg Bojesen, Kenneth Leo Hansen, Martin Høigaard Rasmussen
 
+##The Selenium UI
+Selenium ui testsare in the folder src/test/seleniumtest 
+<br />
+To run them you must install selenium IDE first.
+<br />
+Then open the IDE and run the tests.
+
+## WebDriver
+You must have firefox installed to run this program.
+<br />
+To run the tasks for WebDriver you must locate the file in path: src/main/java/webdriver/WebMain.java
+<br />
+Then just run WebMain.java.
+<br />
+A browser will open where each link will be clicked
+Check console to see the correct table values that will be printed
+
+
+
+

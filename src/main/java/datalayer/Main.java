@@ -1,12 +1,13 @@
-package main;
+package datalayer;
 
-import datalayer.ConnectionString;
 import dto.Customer;
 import datalayer.customer.CustomerStorageImpl;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.sql.SQLException;
-
-public final class Main {
+@SpringBootApplication
+public class Main {
 
     public static void main(String[] args) throws SQLException {
         final String conStr = "jdbc:mysql://localhost:3307/DemoApplicationTest";
@@ -19,11 +20,11 @@ public final class Main {
             System.out.println(toString(c));
         }
         System.out.println("The end.");
+
+            SpringApplication.run(Main.class, args);
     }
 
     public static String toString(Customer c) {
         return "{" + c.getId() + ", " + c.getFirstname() + ", " + c.getLastname() + ", " + c.getPhonenumber() + " }";
-    }
-    private Main(){
     }
 }

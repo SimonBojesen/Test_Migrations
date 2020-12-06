@@ -51,7 +51,7 @@ public class CreateAndLoadEmployeeTest {
 
     }
 
-    private void addFakeEmployees(int numEmployees) throws SQLException {
+    public void addFakeEmployees(int numEmployees) throws SQLException {
         Faker faker = new Faker();
         for (int i = 0; i < numEmployees; i++) {
             EmployeeCreation e = new EmployeeCreation(faker.name().firstName(), faker.name().lastName(), faker.date().birthday());
@@ -60,7 +60,7 @@ public class CreateAndLoadEmployeeTest {
     }
 
     @Test
-    private void mustSaveCustomerInDatabaseWhenCallingCreateCustomer() throws SQLException, ParseException {
+    public void mustSaveCustomerInDatabaseWhenCallingCreateCustomer() throws SQLException, ParseException {
         // Arrange
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date now = sdf.parse("2020-05-05");
@@ -77,7 +77,7 @@ public class CreateAndLoadEmployeeTest {
     }
 
     @Test
-    private void mustReturnLatestId() throws SQLException {
+    public void mustReturnLatestId() throws SQLException {
         // Arrange
         // Act
         var id1 = employeeStorage.createEmployee(new EmployeeCreation("a", "b", new Date()));

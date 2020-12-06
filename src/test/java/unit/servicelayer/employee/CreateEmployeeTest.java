@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Tag("unit")
-class CreateEmployeeTest {
+public class CreateEmployeeTest {
 
     // SUT (System Under Test)
     private EmployeeService employeeService;
@@ -36,7 +36,7 @@ class CreateEmployeeTest {
     }
 
     @Test
-    private void mustCallStorageWhenCreatingEmployee() throws EmployeeServiceException, SQLException {
+    public void mustCallStorageWhenCreatingEmployee() throws EmployeeServiceException, SQLException {
         // Arrange
         var firstName = "a";
         var lastName = "b";
