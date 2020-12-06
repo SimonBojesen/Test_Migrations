@@ -8,7 +8,7 @@ docker run -d --rm --name mysql-test-db -e MYSQL_ROOT_PASSWORD=testuser123 -p 33
 ## Authors
 Simon Schønberg Bojesen, Kenneth Leo Hansen, Martin Høigaard Rasmussen
 
-##The Selenium UI
+## The Selenium UI
 Selenium ui testsare in the folder src/test/seleniumtest 
 <br />
 To run them you must install selenium IDE first.
@@ -29,6 +29,8 @@ Check console to see the correct table values that will be printed
 How to start cucumber tutorial tests
 * Open a terminal
 * Cd into cucumber\hellocucumber
+<br />
+
 Cucumber was not extended into our program
 
 
